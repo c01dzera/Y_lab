@@ -1,6 +1,8 @@
+from ipaddress import IPv4Address
+
 
 def int32_to_ip(int32):
-  return
+    return str(IPv4Address(int32))
 
 
 assert int32_to_ip(2154959208) == "128.114.17.104"
