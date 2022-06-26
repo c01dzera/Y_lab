@@ -1,4 +1,13 @@
-def bananas(s) -> set:
+import itertools
+
+
+def bananas(s):
     result = set()
-    # Your code here!
-    return result
+    length = len('banana')
+    if len(s) >= len('banana'):
+        for i in itertools.combinations(s, 6):
+            if 'banana' in ''.join(i):
+                print(''.join(i))
+
+
+bananas('bbananana')
