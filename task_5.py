@@ -12,19 +12,9 @@ def multiply(seq):
 def count_find_num(primesL, limit):
     # your code here
     rep = 3
-    for nums in itertools.combinations_with_replacement(primesL, rep):
-        if multiply(primesL) <= multiply(nums) <= limit:
-            print(nums, multiply(nums))
-    print()
-    rep = 4
-    for nums in itertools.combinations_with_replacement(primesL, rep):
-        if multiply(primesL) <= multiply(nums) <= limit:
-            print(nums, multiply(nums))
-    print()
-    rep = 5
-    for nums in itertools.combinations_with_replacement(primesL, rep):
-        if (multiply(primesL) <= multiply(nums) <= limit) and (set(primesL).issubset(set(nums))):
-            print(nums, multiply(nums))
+    i = primesL[0]
+    j = 0
+    # while i != primesL[-1]:
+    print(multiply(primesL[j+1:]) * multiply([i]*rep))
 
-
-count_find_num(primesL = [2, 5, 7], limit = 500)
+count_find_num([2, 5, 7], 500)
