@@ -10,11 +10,16 @@ def multiply(seq):
 
 
 def count_find_num(primesL, limit):
-    # your code here
-    rep = 3
-    i = primesL[0]
+    rep = 1
     j = 0
-    # while i != primesL[-1]:
-    print(multiply(primesL[j+1:]) * multiply([i]*rep))
+    i = primesL[0]
+    while i != primesL[-1]:
+        res = multiply(primesL[j+1:]) * multiply([i]*rep)
+        if res > limit:
+            rep = 1
+            j += 1
+            i = primesL[j]
+        rep += 1
+        print(res)
 
 count_find_num([2, 5, 7], 500)
